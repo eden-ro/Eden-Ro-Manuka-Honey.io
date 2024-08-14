@@ -1,16 +1,30 @@
-/* Basic reset */
+@import url('https://fonts.googleapis.com/css2?family=Italiana:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Italiana:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Global styles for body */
+/* Global Font Changes */
 body {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Italiana', serif; /* Italiana for body text */
     color: #083343;
     background-color: #f9f8f5;
     padding-top: 80px; /* Adjust this value based on the actual height of your navbar */
+}
+
+/* Font adjustments for paragraphs */
+p {
+    font-family: 'Poppins', sans-serif; /* Set Poppins for all p tags */
+}
+
+/* Button styles with Poppins font */
+button, .best-sellers-button, .transparent-button, .feature-button, .purpose-button {
+    font-family: 'Poppins', sans-serif; /* Poppins for button text */
+    font-size: 16px; /* Ensure button text is legible */
+    font-weight: 500; /* Ensure buttons have a medium weight */
 }
 
 /* Header Navigation Bar Styling */
@@ -123,6 +137,7 @@ header .navbar-nav li a:hover {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    font-family: 'Poppins', sans-serif; /* Poppins for button text */
 }
 
 .overlay-content button:hover {
@@ -140,10 +155,7 @@ header .navbar-nav li a:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block;
+    font-family: 'Poppins', sans-serif; /* Poppins for button text */
 }
 
 .best-sellers-button:hover {
@@ -161,10 +173,7 @@ header .navbar-nav li a:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block;
+    font-family: 'Poppins', sans-serif; /* Poppins for button text */
 }
 
 .transparent-button:hover {
@@ -199,10 +208,7 @@ header .navbar-nav li a:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block;
+    font-family: 'Poppins', sans-serif; /* Poppins for button text */
 }
 
 .feature-button:hover {
@@ -224,15 +230,6 @@ header .navbar-nav li a:hover {
     margin: 0 auto; /* Center the paragraph */
 }
 
-/* Break Image Section */
-#break-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: -1;
-}
-
 /* Purpose Button Styling */
 .purpose-button {
     background-color: transparent;
@@ -242,10 +239,7 @@ header .navbar-nav li a:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block;
+    font-family: 'Poppins', sans-serif; /* Poppins for button text */
 }
 
 .purpose-button:hover {
