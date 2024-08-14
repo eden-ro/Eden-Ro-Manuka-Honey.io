@@ -1,103 +1,90 @@
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href.startsWith('#')) {
             e.preventDefault();
-            const targetId = href.substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        } else {
-            window.location.href = href;
+            document.querySelector(href).scrollIntoView({
+                behavior: 'smooth'
+            });
         }
     });
 });
 
-// Reveal Sections on Scroll
-const faders = document.querySelectorAll('.fade-in');
+// Modal Code (Assuming this is part of your JavaScript)
+const modal = document.getElementById('myModal');
+const btn = document.getElementById('myBtn');
+const span = document.getElementsByClassName('close')[0];
 
-const appearOptions = {
-    threshold: 0.5
+btn.onclick = function () {
+    modal.style.display = 'block';
+}
+
+span.onclick = function () {
+    modal.style.display = 'none';
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Sticky Navbar
+window.onscroll = function () {
+    myFunction()
 };
 
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.classList.add('appear');
-            appearOnScroll.unobserve(entry.target);
-        }
-    });
-}, appearOptions);
+const navbar = document.querySelector("header");
+const sticky = navbar.offsetTop;
 
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
+function myFunction() {
+    if (window.pageYOffset > sticky) {
+        navbar.classList.add("sticky");
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}
 
-// Lightbox Effect for Images
-const galleryImages = document.querySelectorAll('.image-column img');
-const lightbox = document.createElement('div');
-lightbox.id = 'lightbox';
-document.body.appendChild(lightbox);
+// Dropdown Menu
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.navbar .dropdown').forEach(function (dropdown) {
+        dropdown.addEventListener('mouseenter', function () {
+            const dropdownMenu = this.querySelector('.dropdown-menu');
+            dropdownMenu.classList.add('show');
+        });
 
-galleryImages.forEach(image => {
-    image.addEventListener('click', () => {
-        lightbox.classList.add('active');
-        const img = document.createElement('img');
-        img.src = image.src;
-        while (lightbox.firstChild) {
-            lightbox.removeChild(lightbox.firstChild);
-        }
-        lightbox.appendChild(img);
+        dropdown.addEventListener('mouseleave', function () {
+            const dropdownMenu = this.querySelector('.dropdown-menu');
+            dropdownMenu.classList.remove('show');
+        });
     });
 });
 
-lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
+// Set padding-top for body based on header height
+document.addEventListener('DOMContentLoaded', () => {
+    const headerHeight = document.querySelector('header').offsetHeight;
+    document.body.style.paddingTop = `${headerHeight}px`;
 });
 
-// Play/Pause Video on Click
-const video = document.querySelector('.video-element');
-if (video) {
-    video.addEventListener('click', () => {
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
-        }
-    });
-};
-
-// Simple Form Validation for Email Input
-const form = document.querySelector('form');
-if (form) {
-    form.addEventListener('submit', function(e) {
-        const emailInput = document.querySelector('input[type="email"]');
-        const errorMessage = document.getElementById('error-message');
-
-        if (emailInput && !emailInput.value.includes('@')) {
+// Additional JavaScript for handling other interactions
+document.addEventListener('DOMContentLoaded', () => {
+    // Toggle dropdown menu on click
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+        toggle.addEventListener('click', function (e) {
             e.preventDefault();
-            errorMessage.textContent = 'Please enter a valid email address.';
-            emailInput.style.borderColor = 'red';
-        } else {
-            if (errorMessage) errorMessage.textContent = '';
-            if (emailInput) emailInput.style.borderColor = '';
+            const dropdownMenu = this.nextElementSibling;
+            dropdownMenu.classList.toggle('show');
+        });
+    });
+
+    // Close dropdown menu when clicking outside
+    window.addEventListener('click', function (e) {
+        if (!e.target.matches('.dropdown-toggle')) {
+            document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                menu.classList.remove('show');
+            });
         }
     });
-}
+});
 
-// Dynamic Content Loading
-const loadMoreBtn = document.getElementById('loadMoreBtn');
-if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
-        fetch('more-content.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contentArea').innerHTML += data;
-            })
-            .catch(error => console.error('Error fetching content:', error));
-    });
-}
