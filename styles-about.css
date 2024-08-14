@@ -1,0 +1,207 @@
+/* Main Content Styling */
+main {
+    margin-top: 130px; /* Adjust as needed for this specific page */
+}
+
+/* Hero Image Section */
+#hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Text Sections */
+.text-section {
+    background-color: #083343;
+    color: #f9f8f5;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.text-section h1, .text-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.text-section p, .history-section p, .sustainability-section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Roots in Reverence and Guardians of Earth Sections */
+#roots-in-reverence, #guardians-of-earth {
+    background-color: #FFFFFF;
+    color: #083343;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* Image Columns Section */
+.image-columns-section {
+    padding: 0;
+}
+
+.image-columns-section .container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+}
+
+.image-columns-section .row {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+}
+
+.image-columns-section .col-md-6 {
+    padding-left: 0;
+    padding-right: 0;
+    flex: 1;
+}
+
+.image-columns-section img {
+    height: 500px; /* Fixed height to match video */
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Video Section */
+.video-section {
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.video-container {
+    width: 100%;
+    height: 500px; /* Same height as images */
+    position: relative;
+    overflow: hidden;
+}
+
+.video-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+/* Honey Comparison Section */
+#honey-comparison {
+    padding: 100px 20px;
+    background-color: #f9f8f5;
+}
+
+#honey-comparison h2 {
+    color: #083343;
+    margin-bottom: 30px;
+}
+
+#honey-comparison .col-md-6 {
+    padding: 0 15px;
+}
+
+#honey-comparison .list-unstyled {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.list-unstyled {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.list-item {
+    margin-bottom: 18px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 40px;
+    text-align: left;
+}
+
+.list-item:before {
+    content: attr(data-icon);
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    font-size: 1.4em;
+    line-height: 1.4em;
+}
+
+.list-item[data-icon="&#10060;"]:before {
+    color: #D62828;
+}
+
+.list-item[data-icon="&#10004;"]:before {
+    color: #2b7a78;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-columns-section .col-md-6,
+    .video-section .ratio {
+        margin-bottom: 20px;
+    }
+
+    .image-columns-section img,
+    .video-section .ratio {
+        max-height: 300px; /* Adjust for smaller screens */
+    }
+    
+    .text-section h1, .text-section h2 {
+        font-size: 2em;
+    }
+
+    .text-section p, .history-section p, .sustainability-section p {
+        font-size: 1em;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #honey-comparison .col-md-6 {
+        margin-bottom: 40px;
+    }
+
+    .list-item {
+        font-size: 1em;
+    }
+
+    footer ul {
+        flex-direction: column;
+    }
+
+    footer ul li {
+        margin: 5px 0;
+    }
+}
+
+/* Additional responsive adjustments for very small screens */
+@media (max-width: 480px) {
+    .video-container,
+    .image-columns-section img {
+        height: 200px; /* Further adjust for very small screens */
+    }
+
+    .text-section, #roots-in-reverence, #guardians-of-earth, #honey-comparison {
+        padding: 50px 10px;
+    }
+
+    .text-section h1, .text-section h2 {
+        font-size: 1.8em;
+    }
+
+    .image-columns-section img,
+    .video-section .ratio {
+        max-height: 200px;
+    }
+}

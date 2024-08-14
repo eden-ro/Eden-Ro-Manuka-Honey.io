@@ -1,0 +1,338 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles for body */
+body {
+    font-family: 'Libre Baskerville', serif;
+    color: #083343;
+    background-color: #f9f8f5;
+    padding-top: 80px; /* Adjust this value based on the actual height of your navbar */
+}
+
+/* Header Navigation Bar Styling */
+header {
+    background-color: #f9f8f5;
+    z-index: 1000; /* Ensure header is above other elements */
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .navbar-toggler {
+    margin-right: 20px;
+}
+
+header .navbar-brand img {
+    max-height: 80px;
+    width: auto;
+    margin-left: 20px;
+}
+
+header .navbar-nav {
+    align-items: center;
+    text-align: center;
+}
+
+header .navbar-nav li {
+    margin: 0 15px;
+}
+
+header .navbar-nav li a {
+    color: #083343;
+    text-decoration: none;
+    font-size: 1.3em;
+    transition: color 0.3s ease;
+}
+
+header .navbar-nav li a:hover {
+    color: #2b7a78;
+}
+
+/* Video Hero Section Styling */
+.video-hero {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Maintains 16:9 aspect ratio */
+    overflow: hidden;
+    background-color: #000; /* Fallback color in case the video doesn't load */
+}
+
+.video-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    clip-path: inset(0px 0px 40px 0px); /* Adjust the bottom value (40px) to hide the watermark */
+    z-index: 1;
+}
+
+/* Full-Image Overlay for Hero Section */
+.video-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+    z-index: 2;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: right;
+    z-index: 3; /* Above the overlay */
+    max-width: 30%;
+}
+
+.overlay-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.overlay-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.overlay-content button {
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.overlay-content button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Button Styling */
+button, input[type="submit"] {
+    background-color: #f9f8f5; /* Button background color */
+    color: #083343; /* Text color */
+    border: 2px solid #083343; /* Border color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #083343; /* Background color on hover */
+    color: #FFFFFF; /* Text color on hover */
+}
+
+/* Bootstrap Button Override */
+button.btn.btn-primary {
+    background-color: #f9f8f5 !important; /* Override the default Bootstrap color */
+    color: #083343 !important; /* Override text color */
+    border: 2px solid #083343 !important; /* Add border to match */
+    padding: 10px 20px !important; /* Adjust padding */
+    border-radius: 5px !important; /* Rounded corners */
+    cursor: pointer !important; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s !important; /* Smooth transition */
+}
+
+button.btn.btn-primary:hover {
+    background-color: #083343 !important; /* Darker shade on hover */
+    color: #FFFFFF !important;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #083343;
+    color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #D3D3D3;
+}
+
+/* Features Section Styling */
+#features {
+    padding: 50px 0;
+    background-color: #000000; /* Set the background color to black */
+    width: 100%; /* Ensure the section takes the full width of its container */
+    text-align: center; /* Center-align the text */
+    margin: 0 auto; /* Center the section */
+}
+
+#features h3,
+#features p {
+    color: #f9f8f5; /* Set the text color to white */
+    text-align: center; /* Center-align the text */
+}
+
+#features a {
+    color: #66ccff; /* Optional: Change link color to a lighter blue that stands out on black */
+    text-decoration: underline;
+    display: none; /* Hide the explore more links */
+}
+
+#features a:hover {
+    text-decoration: none;
+    color: #99e6ff; /* Change hover color to an even lighter shade */
+}
+
+#features .text-start {
+    padding-right: 20px;
+}
+
+#features .text-center img {
+    max-width: 100%; /* Ensure the image does not exceed its container */
+    height: auto;
+}
+
+/* Centering the content within the section */
+#features .container {
+    width: 100%;
+    max-width: 1200px; /* Set a max-width to align with the rest of the content */
+    margin: 0 auto; /* Center the content within the section */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #features .text-center img {
+        margin-bottom: 20px;
+    }
+
+    #features .text-start {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    #features .text-center, 
+    #features .text-start {
+        text-align: center;
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header .navbar {
+        padding: 0 20px;
+    }
+
+    header .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .navbar-nav li {
+        margin: 5px 0;
+    }
+    
+    .overlay-content {
+        max-width: 60%;
+        right: 5%;
+    }
+    
+    .overlay-content h1 {
+        font-size: 2rem;
+    }
+
+    .overlay-content p {
+        font-size: 1rem;
+    }
+
+    .overlay-content button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    footer ul {
+        flex-direction: column;
+    }
+
+    footer ul li {
+        margin: 5px 0;
+    }
+
+    #features .text-center img {
+        margin-bottom: 20px;
+    }
+
+    #features .text-start {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    #features .text-center, 
+    #features .text-start {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-hero {
+        padding-bottom: 75%; /* Adjusts to ensure video covers smaller screens */
+    }
+
+    .overlay-content {
+        max-width: 90%;
+        padding: 10px;
+        right: 5%;
+    }
+
+    .overlay-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .overlay-content p {
+        font-size: 0.875rem;
+    }
+
+    .overlay-content button {
+        padding: 6px 12px;
+        font-size: 0.875rem;
+    }
+    
+    #features .row {
+        margin-bottom: 30px;
+    }
+}

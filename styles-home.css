@@ -1,0 +1,76 @@
+/* styles-home.css */
+
+/* Example styles for the home page */
+
+/* Home Page Hero Section */
+#home-hero {
+    background-image: url('home-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+#home-hero h1 {
+    font-size: 4em;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Home Page Features Section */
+#home-features {
+    padding: 50px 20px;
+    background-color: #f9f8f5;
+    text-align: center;
+}
+
+#home-features h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+#home-features .feature {
+    margin-bottom: 30px;
+}
+
+#home-features .feature img {
+    width: 100%;
+    height: auto;
+}
+
+/* Transparent Button Styling for Home Page */
+.transparent-button {
+    background-color: transparent; /* Transparent background */
+    color: #083343; /* Text color */
+    border: 2px solid #083343; /* Border color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.transparent-button:hover {
+    background-color: #083343; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+/* Home Page Responsive Adjustments */
+@media (max-width: 768px) {
+    #home-hero h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    #home-hero h1 {
+        font-size: 1.8em;
+    }
+
+    #home-features h2 {
+        font-size: 2em;
+    }
+}
