@@ -54,22 +54,6 @@
     transform: scale(1.1); /* Scale image to 110% of its original size */
 }
 
-/* Container for category images */
-.product-container {
-    position: relative; /* Ensure positioning context for the hover effect */
-    overflow: hidden; /* Hide overflow when scaling */
-}
-
-/* Category images */
-.product-container img {
-    transition: transform 0.3s ease; /* Smooth transition for the scale effect */
-}
-
-/* Enlarge effect on hover */
-.product-container:hover img {
-    transform: scale(1.1); /* Scale image to 110% of its original size */
-}
-
 /* Home Page Responsive Adjustments */
 @media (max-width: 768px) {
     #home-hero h1 {
